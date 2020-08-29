@@ -1,0 +1,24 @@
+{
+  "name": "markdown-parser",
+  "version": "1.0.0",
+  "description": "A realtime markdown parser.",
+  "main": "mdparse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrezn0v/Markdown-Parser.git"
+  },
+  "keywords": [
+    "markdown",
+    "javascript",
+    "web"
+  ],
+  "author": "RZWSHRE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vrezn0v/Markdown-Parser/issues"
+  },
+  "homepage": "https://github.com/vrezn0v/Markdown-Parser#readme"
+}
