@@ -40,5 +40,3 @@ function parse(markdown) {
 
     return markdown;
 }
-
-console.log(parse('### General Kenobi'));

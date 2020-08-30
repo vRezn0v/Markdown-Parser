@@ -1,0 +1,23 @@
+aside {
+    background: gray;
+    
+    white-space: pre-wrap;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    
+    overflow-y: scroll;
+    width: 50%;
+    float: left;
+}
+
+section {
+    height: 100%;
+    margin-left: 50%;
+    width: 50%;
+    float: right;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./mdparse.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <aside id="mdin" contenteditable>
+        ### Hello World
+    </aside>
+    <section id="htop"></section>
+    <script>
+        mdin = document.getElementById('mdin');
+        htop = document.getElementById('htop');
+        parser = function(){
+            document.getElementById('htop').innerHTML=parse(mdin.innerText);
+            console.log(mdin);
+        }
+        parser();
+        mdin.addEventListener('keyup', parser, false);
+    </script>
+</body>
+</html>
