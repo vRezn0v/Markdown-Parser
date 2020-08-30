@@ -1,12 +1,12 @@
 function parse(markdown) {
     //Returns HTML for the Provided MD input
     // Headings
-    markdown = markdown.replace(/[\#]{6}(.+)/g, '<h6>$1</h6>');
-    markdown = markdown.replace(/[\#]{5}(.+)/g, '<h5>$1</h5>');
-    markdown = markdown.replace(/[\#]{4}(.+)/g, '<h4>$1</h4>');
-    markdown = markdown.replace(/[\#]{3}(.+)/g, '<h3>$1</h3>');
-    markdown = markdown.replace(/[\#]{2}(.+)/g, '<h2>$1</h2>');
-    markdown = markdown.replace(/[\#]{1}(.+)/g, '<h1>$1</h1>');
+    markdown = markdown.replace(/[\#]{6}\s(.+)/g, '<h6>$1</h6>');
+    markdown = markdown.replace(/[\#]{5}\s(.+)/g, '<h5>$1</h5>');
+    markdown = markdown.replace(/[\#]{4}\s(.+)/g, '<h4>$1</h4>');
+    markdown = markdown.replace(/[\#]{3}\s(.+)/g, '<h3>$1</h3>');
+    markdown = markdown.replace(/[\#]{2}\s(.+)/g, '<h2>$1</h2>');
+    markdown = markdown.replace(/[\#]{1}\s(.+)/g, '<h1>$1</h1>');
     // Links
     markdown = markdown.replace(/[\[]{1}([^\]]+)[\]]{1}[\(]{1}([^\)\"]+)(\"(.+)\")?[\)]{1}/g, '<a href="$2">$1</a>');
     // Unordered List
@@ -22,7 +22,7 @@ function parse(markdown) {
     // Bold, Italic, Strikethrough Text
     markdown = markdown.replace(/[\*\_]{2}([^\*\_]+)[\*\_]{2}/g, '<b>$1</b>');
     markdown = markdown.replace(/[\*\_]{1}([^\*\_]+)[\*\_]{1}/g, '<i>$1</i>');
-    markdown = markdown.replace(/[\*\-]{1}([^\*\-]+)[\*\-]{1}/g, '<u>$1</u>');
+    //markdown = markdown.replace(/[\*\-]{1}([^\*\-]+)[\*\-]{1}/g, '<u>$1</u>');
     markdown = markdown.replace(/[\~]{2}([^\~]+)[\~]{2}/g, '<del>$1</del>');
     // Images
     markdown = markdown.replace(/\!\[([^\]]+)\]\(([^\)]+)\)/g, '<img src="$2" alt="$1" />');
