@@ -1,9 +1,17 @@
 // FILE CONTENTS
 //TODO: Open and Save File
 var storedmd;
+var theme;
+
+const updateTheme = (themename) => {
+    // themes (to be added): default, black&yellow, haxxor, matte, pastel, chalky, caffiene
+    // Remove All Theme Classes
+    // Save Theme Classes
+}
 
 const openFile = () => {
-    
+    // Check If File Is Markdown
+    // If markdown, pipe into mdin and render to htop
 }
 
 const clearEditor = () => {
@@ -20,6 +28,8 @@ const saveProgress = () => {
 const loadProgress = () => {
     // Loads MD from Local Storage
     storedmd = (localStorage.getItem('activemd')!==null) ? localStorage.getItem('activemd') : '';
+    themename = (localStorage.getItem('editortheme')!==null) ? localStorage.getItem('editortheme') : 'default';
+    updateTheme(themename);
     mdin.innerText=storedmd;
     console.log("LOAD");
 }

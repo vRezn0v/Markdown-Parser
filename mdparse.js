@@ -42,7 +42,7 @@ function parse(markdown) {
     
     // Paragraph
     markdown = markdown.replace(/^\s*(\n)?(.+)/gm, function(m){
-        return  /\<(\/)?(h\d|ul|ol|li|blockquote|pre|img|hr)/.test(m) ? m : '<p>'+m+'</p>';
+        return  /\<(\/)?(h\d|ul|ol|li|blockquote|pre|img|hr|form|label|input )/.test(m) ? m : '<p>'+m+'</p>';
     });
     // Strip p from pre
     markdown = markdown.replace(/(\<pre.+\>)\s*\n\<p\>(.+)\<\/p\>/gm, '$1$2');    
