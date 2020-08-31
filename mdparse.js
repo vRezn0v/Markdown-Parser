@@ -22,9 +22,9 @@ function parse(markdown) {
     markdown = markdown.replace(/^\*(.+)/gm, '<li>$1</li>')
     
     // Ordered List
-    markdown = markdown.replace(/^\s*\n\d/gm, '<ol>\n*');
-    markdown = markdown.replace(/^(\d.+)\s*\n([^\*])/gm, '$1\n</ol>\n\n$2');
-    markdown = markdown.replace(/^\d(.+)/gm, '<li>$1</li>');
+    markdown = markdown.replace(/^\s*\n\d\./gm, '<ol>\n1.');
+    markdown = markdown.replace(/^(\d\..+)\s*\n([^\d\.])/gm, '$1\n</ol>\n\n$2');
+    markdown = markdown.replace(/^\d\.(.+)/gm, '<li>$1</li>');
     // Blockquote
     markdown = markdown.replace(/^\>(.+)/gm, '<blockquote>$1</blockquote>');
     // Bold, Italic, Strikethrough Text

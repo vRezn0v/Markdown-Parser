@@ -11,9 +11,34 @@ body {
     grid-row: 1 / 2;
     grid-column: 1 / 5;
     width: 100%;
+    margin: 0;
     border-bottom: solid 1px gray;
     display: flex;
     justify-content: center;
+}
+
+.header .brand {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 52px;
+    line-height: 55px;
+    margin: 10px!important;
+}
+
+.header .options {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    height: max-content;
+    top: 80px;
+}
+
+.header .options #status, .header .options #file,.header .options #settings {
+    color: white;
+    background-color: black;
+    width: 70px!important;
+    padding: 5px 0;
+    text-align: center;
+    margin: 3px;
 }
 
 .main {
@@ -37,6 +62,7 @@ body {
     height: 90%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 .main #mdin:focus {
@@ -54,7 +80,7 @@ body {
     border: solid 1px gray;
     border-left-style: hidden;
     user-select: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
 
 .main #rightside #htop a {
