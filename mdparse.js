@@ -45,9 +45,7 @@ function parse(markdown) {
         return  /\<(\/)?(h\d|ul|ol|li|blockquote|pre|img|hr)/.test(m) ? m : '<p>'+m+'</p>';
     });
     // Strip p from pre
-    markdown = markdown.replace(/(\<pre.+\>)\s*\n\<p\>(.+)\<\/p\>/gm, '$1$2');
-    //markdown = markdown.replace(/(\<pre.+\>)\s*\n\<p\>(.+)\<\/p\>/gm, '$1$2');
-    
+    markdown = markdown.replace(/(\<pre.+\>)\s*\n\<p\>(.+)\<\/p\>/gm, '$1$2');    
 
     return markdown;
 }

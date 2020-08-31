@@ -3,7 +3,7 @@
 var storedmd;
 
 const openFile = () => {
-
+    
 }
 
 const clearEditor = () => {
