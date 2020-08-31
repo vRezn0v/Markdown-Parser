@@ -4,27 +4,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./mdparse.js"></script>
+    <script src="./editor.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="header">
+        <div class="options">
+            <div id="status"></div>
+            <div id="file"></div>
+        </div>
         <h1>Markdown</h1>
     </div>
     <div class="main">
-        <aside id="mdin" contenteditable>
-            ### Hello World
-        </aside>
-        <section id="htop"></section>
+        <aside id="mdin" contenteditable></aside>
+        <div id="rightside">
+            <section id="htop"></section>
+        </div>
     </div>
-    <script>
-        mdin = document.getElementById('mdin');
-        htop = document.getElementById('htop');
-        parser = function(){
-            document.getElementById('htop').innerHTML=parse(mdin.innerText);
-            console.log(mdin);
-        }
-        parser();
-        mdin.addEventListener('keyup', parser, false);
-    </script>
 </body>
 </html>
