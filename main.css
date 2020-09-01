@@ -1,67 +1,50 @@
+/* Themes */
+
+
 body {
-    height: 100%;
-    display: grid;
-    grid-template-rows: 11.5% 80.5%;
-    row-gap: 1%;
-    grid-template-columns: 1% auto auto 1%;
+    height: 100%;    
     overflow: hidden;
 }
 
 .header {
-    grid-row: 1 / 2;
-    grid-column: 1 / 5;
     width: 100%;
     margin: 0;
     border-bottom: solid 1px gray;
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
 }
 
-.header .brand {
+.center {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.header .center .brand {
     font-family: 'Abril Fatface', cursive;
-    font-size: 52px;
-    line-height: 55px;
+    font-size: clamp(3rem, 5vw+1rem, 4.5rem);
     margin: 10px!important;
 }
 
-.header .options {
-    position: absolute;
-    display: flex;
-    flex-flow: row nowrap;
-    height: max-content;
-    top: 80px;
+.header .center .threedot {
+    display: none;
 }
 
-.header .options #status, .header .options #file,.header .options #settings {
+
+.header .center .options #status, .header .center .options #file,.header .center .options #settings {
     color: white;
     background-color: black;
+    border-radius: 5px;
     width: 70px!important;
     padding: 5px 0;
     text-align: center;
     margin: 3px;
 }
-
-.main {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    border-radius: 15px;
-}
-
-.main #mdin, .main #rightside {
-    padding: 5%;
-}
-
 .main #mdin {
-    background-color: wheat!important;
+    background-color: teal!important;
     white-space: normal;
     overflow-y: auto;
-    width: 90%;
-    height: 90%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
@@ -70,15 +53,9 @@ body {
 }
 
 .main #rightside {
-    width: 90%;
-    height: 90%;
     line-break: normal;
     overflow-y: auto;
     overflow-x: hidden;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border: solid 1px gray;
-    border-left-style: hidden;
     user-select: none;
     font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
@@ -101,4 +78,126 @@ body {
   
 .main #rightside #htop pre {
     overflow-y: scroll;
+}
+
+#unsupported {
+    display: none;
+}
+
+@media (min-width: 768px) and (min-height: 400px) {
+    .header {
+        grid-row: 1 / 2;
+        grid-column: 1 / 5;
+    }
+    .header .center .options {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .main {
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        border-radius: 15px;
+    }
+    
+    .main #mdin, .main #rightside {
+        padding: 5%;
+    }
+
+    .main #mdin {
+        width: 90%;
+        height: 90%;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .main #rightside {
+        width: 90%;
+        height: 90%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border: solid 1px gray;
+        border-left-style: hidden;
+        user-select: none;
+        font-family: 'Fira Sans Extra Condensed', sans-serif;
+    }
+        
+}
+
+@media only screen and (min-width: 300px) and (max-width: 768px) and (min-height: 300px) {
+    body {
+        display: grid;
+        grid-template-rows: 15.5% 80.5%;
+        row-gap: 1%;
+        grid-template-columns: 1% 98% 1%;
+    }
+    .header {
+        width: 100vw;
+        height: 100%;
+        grid-row: 1 / 2;
+        grid-column: 1 / 5;
+    }
+    .header .center .brand {
+        font-size: 5vh;
+        text-align: center;
+    }
+    .header .center .options {
+        display: none;
+    }
+    .header .center .threedot {
+        display: flex;
+        flex-flow: row nowrap;
+        position: absolute;
+        float: right;
+        right: 10%;
+        top: 12%;
+        color: black;
+    }
+    .header .center .threedot .dot{
+        background-color: black;
+        width: 1vh;
+        height: 1vh;
+        margin-right: 2px;
+    }
+
+    .main {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        row-gap: 1%;
+        grid-template-rows: 48% 48% ;
+    }
+    .main #mdin {
+        grid-row: 1 / 2;
+        background-color: teal!important;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .main #rightside {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 300px) and (max-height: 300px) {
+    .header {
+        display: none;
+    }
+    .main {
+        display: none;
+    }
+    #unsupported {
+        display: block;
+        width: 100vh;
+        height: 100vh;
+        color: black;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
 }
