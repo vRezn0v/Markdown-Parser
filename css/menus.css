@@ -1,0 +1,44 @@
+.threedot-expand {
+    position: absolute;
+    z-index: 10;
+    border-radius: 10px;
+    color: white;
+    background-color: teal;
+    width: 95vw;
+    height: 40vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    user-select: none;
+}
+
+.threedot-expand .threedotitem {
+    height: 100%;
+    font-size: 1.3em;
+    border-bottom: solid 1px gray;
+    cursor: pointer;
+    user-select: none;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.collapse {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+}
+
+.collapse.show {
+    max-height: 99em;
+    transition: max-height .5s ease-in-out;
+}
+
+.file-menu {
+
+}

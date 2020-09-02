@@ -4,16 +4,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Markdown Editor</title>
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Fira+Sans+Extra+Condensed&family=Oswald&display=swap" rel="stylesheet"> 
-        <script src="./mdparse.js"></script>
-        <script src="./editor.js"></script>
+        <script src="./scripts/mdparse.js"></script>
+        <script src="./scripts/editor.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/menus.css">
     </head>
     <body class="default">
         <div class="header">
             <div class="center">
                 <h1 class="brand">Rez's Markdown Editor</h1>
                 <div class="options">
-                    <div id="status" class="desynced">Status</div>
+                    <div id="status" class="synced">Status</div>
                     <div id="file">File</div>
                     <div id="settings">Settings</div>
                 </div>
@@ -21,10 +22,27 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                </div>  
+                </div>
+                <div class="threedot-expand">
+                    <h1>Options</h1>
+                    <div id="save" class="threedotitem">Save</div>
+                    <div id="savea" class="threedotitem">
+                        <div onclick="clearEditor()">Save As</div>
+                        <div class="collapse" id="saveas">
+                            <div id="html">HTML</div>
+                            <div id="md">Markdown</div>
+                        </div>
+                    </div>
+                    <div id="view" class="threedotitem">
+                        View
+                        <div id="horizontaleditor">Horizontal Tabs</div>
+                        <div id="verticaleditor">Vertical Tabs</div>
+                    </div>
+                    <div id="settings" class="threedotitem">Settings</div>
+                </div>
             </div>
         </div>
-        <div class="main">
+        <div class="main vertical">
             <aside id="mdin" contenteditable></aside>
             <div id="rightside">
                 <section id="htop"></section>
@@ -33,5 +51,6 @@
         <div id="unsupported">
             Viewport Size Not Supported
         </div>
+        <script src="./scripts/collapse.js"></script>
     </body>
 </html>
