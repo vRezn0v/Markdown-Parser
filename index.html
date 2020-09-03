@@ -23,7 +23,7 @@
                         <div class="saveas file-menu-item">Save As</div>
                         <div class="view file-menu-item">View</div>
                     </div>
-                    <div id="settings">Settings</div>
+                    <div id="settings" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
                 </div>
                 <div class="threedot" onclick="collapse(this)" data-target="threedotmodal">
                     <span class="dot"></span>
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="settings" class="threedotitem">Settings</div>
+                    <div id="settings" class="threedotitem" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
                 </div>
             </div>
         </div>
@@ -56,5 +56,9 @@
         <div id="unsupported">
             Viewport Size Not Supported
         </div>
+        <div class="settings collapsemodal" id="settingsmodal">
+            <h1>Settings</h1>
+        </div>    
+    </div>
     </body>
 </html>

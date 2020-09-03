@@ -60,6 +60,18 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+#settingsmodal {
+    position: absolute;
+    background-color: gray;
+    width: 70vw;
+    height: 40vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    border-radius: 10px;
+}
+
 .file-menu {
     position: absolute;
     top: 12%;
