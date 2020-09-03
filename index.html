@@ -6,6 +6,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Fira+Sans+Extra+Condensed&family=Oswald&display=swap" rel="stylesheet"> 
         <script src="./scripts/mdparse.js"></script>
         <script src="./scripts/editor.js"></script>
+        <script src="./scripts/collapse.js"></script>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/menus.css">
     </head>
@@ -15,28 +16,32 @@
                 <h1 class="brand">Rez's Markdown Editor</h1>
                 <div class="options">
                     <div id="status" class="synced">Status</div>
-                    <div id="file">File</div>
+                    <div id="file" data-target="file-menu" onclick="collapse(this)">File</div>
+                    <div class="file-menu collapse" id="file-menu">
+                        <div class="open file-menu-item">Open</div>
+                        <div class="save file-menu-item" onclick="saveProgress()">Save</div>
+                        <div class="saveas file-menu-item">Save As</div>
+                        <div class="view file-menu-item">View</div>
+                    </div>
                     <div id="settings">Settings</div>
                 </div>
-                <div class="threedot">
+                <div class="threedot" onclick="collapse(this)" data-target="threedotmodal">
                     <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
                 </div>
-                <div class="threedot-expand">
+                <div class="threedot-expand collapsemodal" id="threedotmodal">
                     <h1>Options</h1>
-                    <div id="save" class="threedotitem">Save</div>
-                    <div id="savea" class="threedotitem">
-                        <div onclick="clearEditor()">Save As</div>
-                        <div class="collapse" id="saveas">
-                            <div id="html">HTML</div>
-                            <div id="md">Markdown</div>
+                    <div id="open" class="threedotitem">Open</div>
+                    <div id="save" class="threedotitem"  onclick="saveProgress()">Save</div>
+                    <div id="saveasbtn" class="threedotitem">
+                        <div class="matter">
+                            <div data-target="saveas" onclick="collapse(this)">Save As</div>
+                            <div class="collapse" id="saveas">
+                                <div id="html" onclick="saveFileAs('html')">HTML</div>
+                                <div id="md" onclick="saveFileAs('html')">Markdown</div>
+                            </div>
                         </div>
-                    </div>
-                    <div id="view" class="threedotitem">
-                        View
-                        <div id="horizontaleditor">Horizontal Tabs</div>
-                        <div id="verticaleditor">Vertical Tabs</div>
                     </div>
                     <div id="settings" class="threedotitem">Settings</div>
                 </div>
@@ -51,6 +56,5 @@
         <div id="unsupported">
             Viewport Size Not Supported
         </div>
-        <script src="./scripts/collapse.js"></script>
     </body>
 </html>

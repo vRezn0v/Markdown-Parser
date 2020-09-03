@@ -24,7 +24,6 @@ const saveProgress = () => {
     // Saves MD to Local Storage
     window.localStorage.clear();
     window.localStorage.setItem('activemd',  mdin.innerText);
-    console.log(triggers);
 }
 
 const loadProgress = () => {
@@ -40,20 +39,6 @@ const saveFileAs = (extension) => {
     if (extension.toUpperCase()==='HTML'){
     } else if (extension.toUpperCase()==='MD'){
     }
-}
-
-const collapsestates = {
-    'toggle': 'toggle',
-    'show': 'add',
-    'hide': 'remove'
-};
-    
-const collapseitem = (selector, cmd) => {
-    console.log("Hi There");
-    const targets = Array.from(document.querySelectorAll(selector));
-    targets.forEach(target => {
-        target.classList[collapsestates[cmd]('show')];
-    })
 }
 
 window.onload = function () {
