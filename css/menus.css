@@ -73,6 +73,7 @@
 }
 
 .file-menu {
+    user-select: none;
     position: absolute;
     top: 12%;
     background-color: var(--altfill);

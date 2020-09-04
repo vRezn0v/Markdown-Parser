@@ -21,7 +21,7 @@
                         <div class="open file-menu-item">Open</div>
                         <div class="save file-menu-item" onclick="saveProgress()">Save</div>
                         <div class="saveas file-menu-item">Save As</div>
-                        <div class="view file-menu-item">View</div>
+                        <div class="view file-menu-item" onclick="changeViewMode()">View</div>
                     </div>
                     <div id="settings" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
                 </div>
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="main vertical">
+        <div class="main vertical" id="main">
             <aside id="mdin" contenteditable></aside>
             <div id="rightside">
                 <section id="htop"></section>

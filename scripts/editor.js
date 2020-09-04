@@ -14,6 +14,18 @@ const openFile = () => {
     // If markdown, pipe into mdin and render to htop
 }
 
+const changeViewMode = () => {
+    var targetElement = document.getElementsByClassName('main')[0];
+    if (targetElement.classList.contains('vertical')) {
+        targetElement.classList.remove('vertical');
+        targetElement.classList.add('horizontal');
+    }
+    else if (targetElement.classList.contains('horizontal')){
+        targetElement.classList.remove('horizontal');
+        targetElement.classList.add('vertical');
+    }
+}
+
 const clearEditor = () => {
     mdin.innerText = '';
     saveProgress();
