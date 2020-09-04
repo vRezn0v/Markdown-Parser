@@ -21,7 +21,7 @@
                         <div class="open file-menu-item">Open</div>
                         <div class="save file-menu-item" onclick="saveProgress()">Save</div>
                         <div class="saveas file-menu-item">Save As</div>
-                        <div class="view file-menu-item" onclick="changeViewMode()">View</div>
+                        <div class="view file-menu-item" onclick="changeViewMode();collapse(this);" data-target="file-menu">View</div>
                     </div>
                     <div id="settings" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
                 </div>
@@ -30,8 +30,8 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                 </div>
-                <div class="threedot-expand collapsemodal" id="threedotmodal">
-                    <h1>Options</h1>
+                <div class="threedot-expand collapsemodal" id="threedotmodal" onblur="collapse(this)" data-target="threedotmodal">
+                    <div id="threedotheader"><h1>Options</h1><span onmousedown="collapse(this)" data-target="threedotmodal">&times</span></div>
                     <div id="open" class="threedotitem">Open</div>
                     <div id="save" class="threedotitem"  onclick="saveProgress()">Save</div>
                     <div id="saveasbtn" class="threedotitem">
@@ -57,7 +57,7 @@
             Viewport Size Not Supported
         </div>
         <div class="settings collapsemodal" id="settingsmodal">
-            <h1>Settings</h1>
+            <h1 onmousedown="collapse(this)" data-target="settingsmodal">Settings</h1>
         </div>    
     </div>
     </body>

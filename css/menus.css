@@ -18,10 +18,6 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.threedot-expand h1 {
-    padding-left: 30px;
-}
-
 .threedot-expand .threedotitem {
     height: 100%;
     font-size: 1.3em;
@@ -34,6 +30,22 @@
     padding-left: 40px;
 }
 
+#threedotheader {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 30px;
+
+    
+}
+#threedotheader span {
+    font-size: 40px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
@@ -42,17 +54,27 @@
     display: block;
     max-height: 0px;
     overflow: hidden;
+    opacity: 0;
+}
+
+.collapse {
     transition: max-height .5s cubic-bezier(0, 1, 0, 1);
 }
 
+.collapsemodal {
+    transition: opacity .5s cubic-bezier(0, 1, 0, 1);
+}
+
 .collapse.show {
-    max-height: 99em;
+    max-height: 40vh;
+    opacity: 1.0;
     transition: max-height .5s ease-in-out;
 }
 
 .collapsemodal.show {
+    opacity: 1.0;
     max-height: 40vh;
-    transition: max-height .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
