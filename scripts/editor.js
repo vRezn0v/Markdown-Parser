@@ -1,12 +1,14 @@
 // FILE CONTENTS
-//TODO: Open and Save File
-var storedmd;
-var theme;
-
-const updateTheme = (themename) => {
+var storedmd = (localStorage.getItem('activemd')!==null) ? localStorage.getItem('activemd') : '';
+var theme = (localStorage.getItem('editortheme')!==null) ? localStorage.getItem('editortheme') : 'default';
+var target;
+const changeTheme = (targettheme) => {
     // themes (to be added): default, black&yellow, haxxor, matte, pastel, chalky, caffiene
-    // Remove All Theme Classes
-    // Save Theme Classes
+    theme = targettheme;
+
+    target.classList.remove(...target.classList);
+    target.classList.add(theme);
+    saveProgress();
 }
 
 const openFile = () => {
@@ -28,23 +30,24 @@ const changeViewMode = () => {
 
 const clearEditor = () => {
     mdin.innerText = '';
+    htop.innerHTML = '';
     saveProgress();
     console.log("CLEARED");
+    window.location.reload();
 }
 
 const saveProgress = () => {
     // Saves MD to Local Storage
     window.localStorage.clear();
     window.localStorage.setItem('activemd',  mdin.innerText);
+    window.localStorage.setItem('editortheme',  theme);
 }
 
 const loadProgress = () => {
     // Loads MD from Local Storage
-    storedmd = (localStorage.getItem('activemd')!==null) ? localStorage.getItem('activemd') : '';
-    themename = (localStorage.getItem('editortheme')!==null) ? localStorage.getItem('editortheme') : 'default';
-    updateTheme(themename);
     mdin.innerText=storedmd;
-    console.log("LOAD");
+    console.log(theme);
+    console.log(target);
 }
 
 const saveFileAs = (extension) => {
@@ -56,7 +59,9 @@ const saveFileAs = (extension) => {
 window.onload = function () {
     mdin = document.getElementById('mdin');
     htop = document.getElementById('htop');
+    target = document.getElementById('themeable');
     loadProgress();
+    changeTheme(theme);
     parser = function(){
         htop.innerHTML=parse(mdin.innerText);
     }

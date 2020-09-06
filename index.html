@@ -10,12 +10,11 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/menus.css">
     </head>
-    <body class="chalky">
+    <body id="themeable">
         <div class="header">
             <div class="center">
                 <h1 class="brand">Rez's Markdown Editor</h1>
                 <div class="options">
-                    <div id="status" class="synced">Status</div>
                     <div id="file" data-target="file-menu" onclick="collapse(this)">File</div>
                     <div class="file-menu collapse" id="file-menu">
                         <div class="open file-menu-item">Open</div>
@@ -39,7 +38,7 @@
                             <div data-target="saveas" onclick="collapse(this)">Save As</div>
                             <div class="collapse" id="saveas">
                                 <div id="html" onclick="saveFileAs('html')">HTML</div>
-                                <div id="md" onclick="saveFileAs('html')">Markdown</div>
+                                <div id="md" onclick="saveFileAs('md')">Markdown</div>
                             </div>
                         </div>
                     </div>
@@ -57,7 +56,20 @@
             Viewport Size Not Supported
         </div>
         <div class="settings collapsemodal" id="settingsmodal">
-            <h1 onmousedown="collapse(this)" data-target="settingsmodal">Settings</h1>
+            <div id="settingsheader"><h1>Settings</h1><span onmousedown="collapse(this)" data-target="settingsmodal">&times</span></div>
+            <div class="settingsitem">
+                <h3>Theme</h3>
+                <div class="theme-selector" style="width: 100%;">
+                    <div class="theme-selector-item" onclick="changeTheme('default')">Default</div>
+                    <div class="theme-selector-item" onclick="changeTheme('bee')">Bee</div>
+                    <div class="theme-selector-item" onclick="changeTheme('haxxor')">Haxxor</div>
+                    <div class="theme-selector-item" onclick="changeTheme('chalky')">Chalky</div>
+                </div>
+            </div>
+            <div class="settingsitem">
+                <h3>Reset</h3>
+                <button onclick="clearEditor()">Reset</button>
+            </div>
         </div>    
     </div>
     </body>

@@ -38,7 +38,7 @@
 
     
 }
-#threedotheader span {
+.collapsemodal span {
     font-size: 40px;
     display: flex;
     flex-flow: column;
@@ -73,13 +73,13 @@
 .collapse.show {
     max-height: 40vh;
     opacity: 1.0;
-    transition: max-height .5s ease-in-out;
+    transition: max-height .5s ease-in-out!important;
 }
 
 .collapsemodal.show {
     opacity: 1.0;
     max-height: 40vh;
-    transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out!important;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
@@ -97,6 +97,32 @@
     transform: translate(-50%, -50%);
     z-index: 30;
     border-radius: 10px;
+    padding: 0px 30px;
+}
+
+#settingsmodal #settingsheader {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#settingsmodal .settingsitem {
+    height: 100%;
+    border-top: solid 1px gray;
+    user-select: none;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.theme-selector {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.theme-selector-item {
+    cursor: pointer;
 }
 
 .file-menu {
