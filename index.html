@@ -17,7 +17,7 @@
                 <div class="options">
                     <div id="file" data-target="file-menu" onclick="collapse(this)">File</div>
                     <div class="file-menu collapse" id="file-menu">
-                        <div class="open file-menu-item">Open</div>
+                        <div class="open file-menu-item" onclick="collapse(this)" data-target="openfilemodal">Open</div>
                         <div class="save file-menu-item" onclick="saveProgress()">Save</div>
                         <div class="saveas file-menu-item">Save As</div>
                         <div class="view file-menu-item" onclick="changeViewMode();collapse(this);" data-target="file-menu">View</div>
@@ -41,6 +41,13 @@
                                 <div id="md" onclick="saveFileAs('md')">Markdown</div>
                             </div>
                         </div>
+                    </div>
+                    <div id="settings" class="threedotitem" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
+                </div>
+                <div class="openfile collapsemodal" id="openfilemodal">
+                    <div id="openfileheader"><h1>Open File</h1><span onmousedown="collapse(this)" data-target="openfilemodal">&times</span></div>
+                    <div id="open" class="openfileitem">
+                        <input type="file"> 
                     </div>
                     <div id="settings" class="threedotitem" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
                 </div>

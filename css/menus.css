@@ -60,6 +60,8 @@
     max-height: 0px;
     overflow: hidden;
     opacity: 0;
+    border: 1px solid var(--text);
+    box-shadow: 5px 5px 1px var(--text);
 }
 
 .collapse {
@@ -73,7 +75,7 @@
 .collapse.show {
     max-height: 40vh;
     opacity: 1.0;
-    transition: max-height .5s ease-in-out!important;
+    transition: max-height .5s ease-in!important;
 }
 
 .collapsemodal.show {
@@ -89,7 +91,20 @@
 
 #settingsmodal {
     position: absolute;
-    background-color: gray;
+    background-color: var(--bg);
+    width: 70vw;
+    height: 40vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    border-radius: 10px;
+    padding: 0px 30px;
+}
+
+#openfilemodal {
+    position: absolute;
+    background-color: var(--bg);
     width: 70vw;
     height: 40vh;
     top: 50%;
@@ -106,9 +121,23 @@
     justify-content: space-between;
 }
 
+#openfilemodal #openfileheader {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+
 #settingsmodal .settingsitem {
     height: 100%;
     border-top: solid 1px gray;
+    user-select: none;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#openfile .openfileitem {
+    height: 100%;
     user-select: none;
     display: flex;
     flex-flow: column nowrap;
@@ -128,18 +157,40 @@
 .file-menu {
     user-select: none;
     position: absolute;
-    top: 12%;
+    top: 12vh;
     background-color: var(--altfill);
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    width: 10%;
-    height: 10%;
+    width: max-content;
+    height: max-content;
+    margin-top: 5px;
     border-radius: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .file-menu-item {
-    padding-left: 10px;
+    font-family: "Fira Sans Extra Condensed";
+    font-weight: bolder;
+    font-size: 21px;
+    padding: 5px 20px;
     cursor: pointer;
+}
+
+.options {
+    font-family: "Fira Sans Extra Condensed";
+    font-weight: bold;
+    text-shadow: 1px 1px var(--text);
+    user-select: none;
+    cursor: pointer;
+}
+
+.options #file {
+    border: 1px solid var(--text);
+    box-shadow: 1px 1px var(--text);
+}
+
+.options #settings {
+    border: 1px solid var(--text);
+    box-shadow: 1px 1px var(--text);
 }

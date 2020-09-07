@@ -11,7 +11,7 @@ const changeTheme = (targettheme) => {
     saveProgress();
 }
 
-const openFile = () => {
+const openFile = (file) => {
     // Check If File Is Markdown
     // If markdown, pipe into mdin and render to htop
 }
