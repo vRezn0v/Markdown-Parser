@@ -5,7 +5,7 @@
     z-index: 10;
     border-radius: 10px;
     color: var(--text);
-    background-color: var(--altfill);
+    background-color: var(--bg);
     width: 70vw;
     height: 40vh;
     top: 50%;
@@ -65,11 +65,11 @@
 }
 
 .collapse {
-    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+    transition: max-height .3s cubic-bezier(0, 1, 0, 1);
 }
 
 .collapsemodal {
-    transition: opacity .5s cubic-bezier(0, 1, 0, 1);
+    transition: opacity .5s ease-in-out;
 }
 
 .collapse.show {
@@ -136,6 +136,30 @@
     flex-flow: column nowrap;
 }
 
+#settingsmodal .settingsitem #reset {
+    border-radius: 5px;
+    height: 40px;
+    width: 80%;
+    margin: 0 10%;
+    background-color: rgb(253, 80, 80);
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    box-shadow: 2px 2px 1px black;
+    transition: background-color 0.5s ease,
+                color 0.5s ease-out;
+}
+
+#settingsmodal .settingsitem #reset:hover {
+    transition: background-color 0.5s ease,
+                color 0.5s ease-out;
+    background-color: white;
+    color: rgb(253, 80, 80);
+    font-weight: bolder;
+    font-size: larger;
+    box-shadow: 2px 2px 1px black;
+}
+
 #openfile .openfileitem {
     height: 100%;
     user-select: none;
@@ -158,7 +182,7 @@
     user-select: none;
     position: absolute;
     top: 12vh;
-    background-color: var(--altfill);
+    background-color: var(--bg);
     display: flex;
     flex-flow: column;
     justify-content: space-between;
