@@ -46,8 +46,6 @@ const saveProgress = () => {
 const loadProgress = () => {
     // Loads MD from Local Storage
     mdin.innerText=storedmd;
-    console.log(theme);
-    console.log(target);
 }
 
 const saveFileAs = (extension) => {

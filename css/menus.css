@@ -2,7 +2,6 @@
 
 .threedot-expand {
     position: absolute;
-    z-index: 10;
     border-radius: 10px;
     color: var(--text);
     background-color: var(--bg);
@@ -57,6 +56,7 @@
 
 .collapse, .collapsemodal {
     display: block;
+    z-index: 10;
     max-height: 0px;
     overflow: hidden;
     opacity: 0;
@@ -217,4 +217,22 @@
 .options #settings {
     border: 1px solid var(--text);
     box-shadow: 1px 1px var(--text);
+}
+
+#modalshade {
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -1vh;
+    display: none;
+}
+
+
+#modalshade.enabled {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: block;
+    z-index: 9;
+    cursor: pointer;
 }

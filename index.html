@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/menus.css">
     </head>
     <body id="themeable">
+        <div id="modalshade" onmousedown="modalbghandler()"></div>
         <div class="header">
             <div class="center">
                 <h1 class="brand">Rez's Markdown Editor</h1>
@@ -59,9 +60,6 @@
                 <section id="htop"></section>
             </div>
         </div>
-        <div id="unsupported">
-            Viewport Size Not Supported
-        </div>
         <div class="settings collapsemodal" id="settingsmodal">
             <div id="settingsheader"><h1>Settings</h1><span onmousedown="collapse(this)" data-target="settingsmodal">&times</span></div>
             <div class="settingsitem">
@@ -77,7 +75,10 @@
                 <h3>Reset</h3>
                 <button id="reset" onclick="clearEditor()">Reset</button>
             </div>
-        </div>    
+            <div id="unsupported">
+                Viewport Size Not Supported
+            </div>
+        </div>
     </div>
     </body>
 </html>
