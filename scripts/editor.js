@@ -61,9 +61,19 @@ const loadProgress = () => {
 }
 
 const saveFileAs = (extension) => {
-    if (extension.toUpperCase()==='HTML'){
-    } else if (extension.toUpperCase()==='MD'){
-    }
+    var exportFile;
+    var fstr;
+    var dataUri;
+    exportFile = "rmdedit.html";
+    fstr = htop.innerHTML;
+    dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(fstr);
+    document.getElementById('htmldn').href = dataUri;
+    document.getElementById('htmldn').setAttribute('download', exportFile);
+    exportFile = "rmdedit.md";
+    fstr = mdin.innerText;
+    dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(fstr);
+    document.getElementById('mddn').href = dataUri;
+    document.getElementById('mddn').setAttribute('download', exportFile);
 }
 
 window.onload = function () {

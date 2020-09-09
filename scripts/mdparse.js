@@ -17,9 +17,9 @@ function parse(markdown) {
     // Links
     markdown = markdown.replace(/[\[]{1}([^\]]+)[\]]{1}[\(]{1}([^\)\"]+)(\"(.+)\")?[\)]{1}/g, '<a href="$2">$1</a>');
     // Unordered List
-    markdown = markdown.replace(/^\s*\n[\*|]\s/gm, '<ul>\n*');
-    markdown = markdown.replace(/^(\*.+)\s*\n([^\*])/gm, '$1\n</ul>\n\n$2');
-    markdown = markdown.replace(/^\*(.+)/gm, '<li>$1</li>')
+    markdown = markdown.replace(/^\s*\n[\-|]\s/gm, '<ul>\n*');
+    markdown = markdown.replace(/^(\-.+)\s*\n([^\-])/gm, '$1\n</ul>\n\n$2');
+    markdown = markdown.replace(/^\-(.+)/gm, '<li>$1</li>')
     
     // Ordered List
     markdown = markdown.replace(/^\s*\n\d\./gm, '<ol>\n1.');
