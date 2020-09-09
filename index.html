@@ -49,12 +49,12 @@
                     <div id="openfileheader"><h1>Open File</h1><span onmousedown="collapse(this)" data-target="openfilemodal">&times</span></div>
                     <div id="open" class="openfileitem">
                         <h2>Select a File</h2>
-                        <form onsubmit="openfile()">
-                            <input type="file" id="fileup">
-                            <input type="submit" id="filesub">
+                        <form>
+                            <input type="file" id="fileup" accept=".md">
+                            <input type="button" id="filesub" onclick="openFile()" value="Open">
                         </form>
                     </div>
-                    <div id="settings" class="threedotitem" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
+                    <div class="openfileitem"></div>
                 </div>
             </div>
         </div>

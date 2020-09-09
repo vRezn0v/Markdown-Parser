@@ -11,9 +11,21 @@ const changeTheme = (targettheme) => {
     saveProgress();
 }
 
-const openFile = (file) => {
-    // Check If File Is Markdown
-    // If markdown, pipe into mdin and render to htop
+const openFile = () => {
+    var files = document.getElementById('fileup').files;
+    if (files.length !== 1) {
+        return false;
+    }
+
+    var fr = new FileReader();
+
+    fr.onload = function(e){
+        console.log(e);
+        mdin.innerText = e.target.result;
+        saveProgress();
+    }
+    fr.readAsText(files.item(0));
+    location.reload();
 }
 
 const changeViewMode = () => {
