@@ -160,11 +160,65 @@
     box-shadow: 2px 2px 1px black;
 }
 
-#openfile .openfileitem {
+.openfile .openfileitem {
     height: 100%;
     user-select: none;
     display: flex;
     flex-flow: column nowrap;
+}
+
+.openfile .openfileitem form {
+    user-select: none;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.openfile .openfileitem form #fileup {
+    color: var(--text);
+    background-color: var(--bg);
+    width: 80%;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid var(--text);
+    box-shadow: inset 3px 3px 5px var(--text),
+                inset -1px -1px var(--text);
+}
+
+.openfile .openfileitem form #fileup::-webkit-file-upload-button {
+    display: none;
+}
+
+.openfile .openfileitem form #fileup::before {
+    content: 'Browse...';
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    -webkit-user-select: none;
+    padding-top: 5%;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 12pt;
+}
+.openfile .openfileitem form #fileup:hover::before {
+    border-color: black;
+}
+.openfile .openfileitem form #fileup:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.openfile .openfileitem form #filesub {
+    color: var(--bg);
+    background-color: var(--fill);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 12pt;
+    width: 19%;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid var(--text);
+    box-shadow: 1px 1px var(--text);
 }
 
 .theme-selector {
@@ -209,12 +263,7 @@
     cursor: pointer;
 }
 
-.options #file {
-    border: 1px solid var(--text);
-    box-shadow: 1px 1px var(--text);
-}
-
-.options #settings {
+.options * {
     border: 1px solid var(--text);
     box-shadow: 1px 1px var(--text);
 }

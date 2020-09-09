@@ -32,7 +32,7 @@
                 </div>
                 <div class="threedot-expand collapsemodal" id="threedotmodal" onblur="collapse(this)" data-target="threedotmodal">
                     <div id="threedotheader"><h1>Options</h1><span onmousedown="collapse(this)" data-target="threedotmodal">&times</span></div>
-                    <div id="open" class="threedotitem">Open</div>
+                    <div id="open" class="threedotitem"  onclick="collapse(this)" data-target="openfilemodal">Open</div>
                     <div id="save" class="threedotitem"  onclick="saveProgress()">Save</div>
                     <div id="saveasbtn" class="threedotitem">
                         <div class="matter">
@@ -48,7 +48,11 @@
                 <div class="openfile collapsemodal" id="openfilemodal">
                     <div id="openfileheader"><h1>Open File</h1><span onmousedown="collapse(this)" data-target="openfilemodal">&times</span></div>
                     <div id="open" class="openfileitem">
-                        <input type="file"> 
+                        <h2>Select a File</h2>
+                        <form onsubmit="openfile()">
+                            <input type="file" id="fileup">
+                            <input type="submit" id="filesub">
+                        </form>
                     </div>
                     <div id="settings" class="threedotitem" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
                 </div>
