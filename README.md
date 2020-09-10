@@ -1,2 +1,11 @@
 # Markdown-Parser
-Realtime Markdown Parser and Editor, comes with built in Templates to help you get a headstart in Creating MD Files.
+Realtime Markdown Parser and Editor.
+
+### Current Features:
+- Themes
+- Export as HTML and Markdown
+- Autosave On Exit
+- Viewmodes (Horizontal and Vertical)
+
+### Upcoming Features:
+- Templates
