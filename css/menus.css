@@ -278,6 +278,13 @@
     box-shadow: 1px 1px var(--text);
 }
 
+.options #file:hover, .options #settings:hover {
+    background-color: white!important;
+    color: black!important;
+    transition: background-color 0.5s ease,
+                color 0.5s ease;
+}
+
 #modalshade {
     width: 200vw;
     height: 200vh;
