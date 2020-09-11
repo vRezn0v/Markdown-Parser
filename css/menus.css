@@ -4,7 +4,7 @@
     position: absolute;
     border-radius: 10px;
     color: var(--text);
-    background-color: var(--bg);
+    background: var(--bg);
     width: 70vw;
     height: 40vh;
     top: 50%;
@@ -97,7 +97,7 @@
 
 #settingsmodal {
     position: absolute;
-    background-color: var(--bg);
+    background: var(--bg);
     width: 70vw;
     height: 40vh;
     top: 50%;
@@ -110,7 +110,7 @@
 
 #openfilemodal {
     position: absolute;
-    background-color: var(--bg);
+    background: var(--bg);
     width: 70vw;
     height: 40vh;
     top: 50%;
@@ -147,19 +147,19 @@
     height: 40px;
     width: 80%;
     margin: 0 10%;
-    background-color: rgb(253, 80, 80);
+    background: rgb(253, 80, 80);
     color: white;
     font-weight: bolder;
     font-size: larger;
     box-shadow: 2px 2px 1px black;
-    transition: background-color 0.5s ease,
+    transition: background 0.5s ease,
                 color 0.5s ease-out;
 }
 
 #settingsmodal .settingsitem #reset:hover {
-    transition: background-color 0.5s ease,
+    transition: background 0.5s ease,
                 color 0.5s ease-out;
-    background-color: white;
+    background: white;
     color: rgb(253, 80, 80);
     font-weight: bolder;
     font-size: larger;
@@ -187,7 +187,7 @@
 
 .openfile .openfileitem form #fileup {
     color: var(--text);
-    background-color: var(--bg);
+    background: var(--bg);
     width: 80%;
     height: 60px;
     border-radius: 10px;
@@ -220,7 +220,7 @@
 
 .openfile .openfileitem form #filesub {
     color: var(--bg);
-    background-color: var(--fill);
+    background: var(--fill);
     cursor: pointer;
     font-weight: 700;
     font-size: 12pt;
@@ -234,19 +234,41 @@
 .theme-selector {
     display: flex;
     width: 100%;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
 .theme-selector-item {
     cursor: pointer;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 45%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    box-shadow: 3px 3px 2px var(--text);
+    transition: box-shadow 1s linear,
+                background 0.2s ease-in,
+                color 0.21s ease-in;
+}
+
+.theme-selector-item:hover {
+    box-shadow: inset 1px 1px 2px var(--bg);
+    background: var(--text);
+    color: var(--bg);
+    transition: box-shadow 1s ease-in,
+                background 500ms ease-in,
+                color 0.21s ease-in;
 }
 
 .file-menu {
     user-select: none;
     position: absolute;
     top: 12vh;
-    background-color: var(--bg);
+    background: var(--bg);
     display: flex;
     flex-flow: column;
     justify-content: space-between;
@@ -279,9 +301,9 @@
 }
 
 .options #file:hover, .options #settings:hover {
-    background-color: white!important;
+    background: white!important;
     color: black!important;
-    transition: background-color 0.5s ease,
+    transition: background 0.5s ease,
                 color 0.5s ease;
 }
 
@@ -297,7 +319,7 @@
 
 
 #modalshade.enabled {
-    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4);
     display: block;
     z-index: 9;
     cursor: pointer;
