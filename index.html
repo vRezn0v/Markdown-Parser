@@ -20,7 +20,11 @@
                     <div class="file-menu collapse" id="file-menu">
                         <div class="open file-menu-item" onclick="collapse(this)" data-target="openfilemodal">Open</div>
                         <div class="save file-menu-item" onclick="saveProgress()">Save</div>
-                        <div class="saveas file-menu-item">Save As</div>
+                        <div class="saveas file-menu-item" onclick="collapse(this)" data-target="filesaveas">Save As</div>
+                        <div class="collapse" onclick="saveFileAs()" id="filesaveas">
+                            <a href="#" id="htmldn">HTML</a>
+                            <a href="#" id="mddn">Markdown</a>
+                        </div>
                         <div class="view file-menu-item" onclick="changeViewMode();collapse(this);" data-target="file-menu">View</div>
                     </div>
                     <div id="settings" data-target="settingsmodal" onclick="collapse(this)">Settings</div>
