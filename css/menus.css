@@ -287,6 +287,42 @@
     cursor: pointer;
 }
 
+#filesaveas {
+    display: flex;
+    flex-flow: column;
+}
+
+#filesaveas * {
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding: 3px;
+    color: black;
+}
+
+#saveas {
+    display: flex;
+    flex-flow: row;
+    width: max-content;
+    border-radius: 10px;
+    background-color: black;
+    justify-content: space-between;
+}
+
+#saveas * {
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    background-color: var(--bg);
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+
+#saveas #htmldn {
+    margin-right: 5px;
+}
+
+
 .options {
     font-family: "Fira Sans Extra Condensed";
     font-weight: bold;
